@@ -18,8 +18,6 @@ class MinHeap {
       parentIndex = Math.floor((curIndex - 1) / 2)
     }
   }
-
-  remove()
 }
 
 var heap = new MinHeap();
