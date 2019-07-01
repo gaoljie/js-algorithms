@@ -14,4 +14,5 @@ function cartesian(setA, setB) {
   return products
 }
 
+
 console.log(cartesian([1, 2], [3, 5]))
