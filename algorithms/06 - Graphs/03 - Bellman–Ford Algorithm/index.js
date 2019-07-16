@@ -1,6 +1,6 @@
 function bellmanFord(graph, source) {
   let dist = {}
-
+  let prev = {}
   for (let edge of graph) {
     let vertex1 = edge[0]
     let vertex2 = edge[1]
@@ -22,6 +22,8 @@ function bellmanFord(graph, source) {
       if (dist[start] + len < dist[end]) {
         dist[end] = dist[start] + len
         changed = true
+
+        prev[end] = start
       }
     }
 
