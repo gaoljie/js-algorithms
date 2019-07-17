@@ -92,6 +92,65 @@ function union(setA, setB) {
   return union
 }
 
+function directedCycleWithDFS(graph) {
+
+  let newGraph = {}
+  let white = new Set()
+  let gray = new Set()
+  let black = new Set()
+
+  let prev = {}
+
+  for (let edge of graph) {
+    let vertex1 = edge[0]
+    let vertex2 = edge[1]
+
+    white.add(vertex1)
+    white.add(vertex2)
+    
+    if (!newGraph[vertex1]) newGraph[vertex1] = new Set()
+
+    newGraph[vertex1].add(vertex2)
+  }
+  function dfs(node) {
+    white.delete(node)
+    gray.add(node)
+
+    let neighbors = newGraph[node]
+
+    if (neighbors) {
+      for (let neighbor of neighbors) {
+        if (black.has(neighbor)) {
+          continue
+        }
+
+        if (gray.has(neighbor)) {
+          return true
+        }
+
+        if (dfs(neighbor)) {
+          return true
+        }
+      }
+    }
+
+    gray.delete(node)
+    black.add(node)
+
+    return false
+  }
+
+  while (white.size) {
+    let [node, ...rest] = white
+
+    if (dfs(node)) {
+      return true
+    }
+  }
+
+  return false
+}
+
 console.log(undirectedWithDFS([
   ['A', 'F'],
   ['B', 'E'],
@@ -108,4 +167,13 @@ console.log(undirectedCycleWithDisjointset([
   ['E', 'D'],
   ['D', 'C'],
   ['B', 'C'],
+]))
+
+
+console.log(directedCycleWithDFS([
+  ['4', '1'],
+  ['1', '2'],
+  ['4', '5'],
+  ['5', '6'],
+  ['6', '4'],
 ]))
