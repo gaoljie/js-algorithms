@@ -1,4 +1,4 @@
-function jump(arr) {
+function dpJump(arr) {
 
   let numOfJump = Array(arr.length).fill(Infinity)
 
@@ -24,7 +24,29 @@ function jump(arr) {
   return numOfJump[arr.length - 1] < Infinity
 }
 
-console.log(jump([2, 3, 1, 1, 2, 4, 2, 0, 1, 1]))
-console.log(jump([1, 1, 1, 10, 1]))
-console.log(jump([5, 4, 3, 2, 1, 0, 0]))
-console.log(jump([3, 2, 1, 0, 4]))
+function greedyJump(arr) {
+  let leftGoodPosition = arr.length - 1;
+
+  for (let numberIndex = arr.length - 2; numberIndex >= 0; numberIndex -= 1) {
+
+    const maxCurrentJumpLength = numberIndex + arr[numberIndex];
+
+    if (maxCurrentJumpLength >= leftGoodPosition) {
+
+      leftGoodPosition = numberIndex;
+
+    }
+  }
+
+  return leftGoodPosition === 0;
+}
+
+console.log(dpJump([2, 3, 1, 1, 2, 4, 2, 0, 1, 1]))
+console.log(dpJump([1, 1, 1, 10, 1]))
+console.log(dpJump([5, 4, 3, 2, 1, 0, 0]))
+console.log(dpJump([3, 2, 1, 0, 4]))
+
+console.log(greedyJump([2, 3, 1, 1, 2, 4, 2, 0, 1, 1]))
+console.log(greedyJump([1, 1, 1, 10, 1]))
+console.log(greedyJump([5, 4, 3, 2, 1, 0, 0]))
+console.log(greedyJump([3, 2, 1, 0, 4]))
