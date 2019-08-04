@@ -4,7 +4,9 @@ function isMatch(string, pattern) {
   memo[0][0] = true
 
   for (let col = 1; col <= pattern.length; col++) {
-    if (pattern[col - 1] === '*') {
+    let patternIndex = col - 1
+
+    if (pattern[patternIndex] === '*') {
       memo[0][col] = memo[0][col - 2]
     } else {
       memo[0][col] = false
@@ -33,3 +35,4 @@ console.log(isMatch('mississippi', 'mis*is*.p*.'))
 console.log(isMatch('abba', 'a*b*.c'))
 console.log(isMatch('abba', '.*c'))
 console.log(isMatch('aaa', 'a*'))
+console.log(isMatch('', 'a*b*'))
