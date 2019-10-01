@@ -28,13 +28,13 @@ class Trie {
 
   isWord(word) {
     let node = this.root;
-    [...word].forEach(char => {
+    for (const char of word) {
       if (node.keys.has(char)) {
         node = node.keys.get(char)
       } else {
         return false
       }
-    })
+    }
 
     return node.end
   }
@@ -52,3 +52,4 @@ myTrie.add("sense");
 console.log(myTrie.isWord("doll"));
 console.log(myTrie.isWord("do"));
 console.log(myTrie.isWord("dor"));
+console.log(myTrie.isWord("dar"));
