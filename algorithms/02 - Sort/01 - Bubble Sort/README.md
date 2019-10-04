@@ -1,22 +1,13 @@
 # Bubble Sort
 
-Bubble sort, sometimes referred to as sinking sort, is a 
-simple sorting algorithm that repeatedly steps through 
-the list to be sorted, compares each pair of adjacent 
-items and swaps them if they are in the wrong order 
-(ascending or descending arrangement). The pass through
-the list is repeated until no swaps are needed, which 
-indicates that the list is sorted.
+Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order (ascending or descending arrangement). The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.
 
-![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
+[![Algorithm Visualization](https://camo.githubusercontent.com/383b23979d4d7f279f8fb285b36bcdd357b10a35/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f632f63382f427562626c652d736f72742d6578616d706c652d33303070782e676966)](https://camo.githubusercontent.com/383b23979d4d7f279f8fb285b36bcdd357b10a35/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f632f63382f427562626c652d736f72742d6578616d706c652d33303070782e676966)
 
 ## Complexity
 
-| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **Bubble sort**       | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
 
-## References
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
-- [YouTube](https://www.youtube.com/watch?v=6Gv8vg0kcHc&index=27&t=0s&list=PLLXdhg_r2hKA7DPDsunoDZ-Z769jWn4R8)
+| Name            | Best | Average | Worst | Memory | Stable | Comments |
+| --------------- | ---- | ------- | ----- | ------ | ------ | -------- |
+| **Bubble sort** | n    | n2      | n2    | 1      | Yes    |          |
